@@ -1,7 +1,4 @@
 rock_library(joint_tools
-    SOURCES Dummy.cpp
-    HEADERS Dummy.hpp)
-
-rock_executable(joint_tools_bin Main.cpp
-    DEPS joint_tools)
-
+    SOURCES PWM.cpp PWMJointPositioner.cpp
+    HEADERS PWM.hpp PWMJointPositioner.hpp PWMSettings.hpp PWMError.hpp
+    DEPS_PKGCONFIG base-types)
