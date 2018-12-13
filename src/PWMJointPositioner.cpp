@@ -30,8 +30,7 @@ vector<double> const& PWMJointPositioner::update(
 {
     for (size_t i = 0; i < mPWM.size(); ++i) {
         mCommands[i] = mPWM[i].update(now,
-            targets.elements[i].position,
-            states.elements[i].position);
+            targets.elements[i].position - states.elements[i].position);
         mErrors[i] = mPWM[i].getError();
     }
     return mCommands;

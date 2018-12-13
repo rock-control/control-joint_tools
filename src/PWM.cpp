@@ -8,7 +8,7 @@ PWM::PWM(PWMSettings settings)
 {
 }
 
-double PWM::update(base::Time now, double target, double current)
+double PWM::update(base::Time now, double error)
 {
     if (mNextCycle.isNull())
     {
@@ -26,7 +26,6 @@ double PWM::update(base::Time now, double target, double current)
         mNextCycle = mNextCycle + mSettings.period;
     }
 
-    double error = target - current;
     double cycle;
     double command;
     if (error > 0) {

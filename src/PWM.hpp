@@ -24,7 +24,7 @@ namespace joint_tools
     public:
         PWM(PWMSettings settings);
         double update(base::Time now,
-            double target, double current);
+            double error);
 
         PWMError getError() const;
     };
